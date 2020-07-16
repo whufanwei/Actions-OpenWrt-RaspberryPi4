@@ -61,6 +61,7 @@ jobs:
         sed -i '$a\src-git small https:\/\/github.com\/kenzok8\/small' feeds.conf.default
         ./scripts/feeds update -a
         rm -rf package/lean/luci-theme-argon
+        rm -rf package/lean/verysync/
         rm -rf package/lean/luci-app-kodexplorer
         rm -rf package/lean/luci-app-pppoe-relay
         rm -rf package/lean/luci-app-pptp-server

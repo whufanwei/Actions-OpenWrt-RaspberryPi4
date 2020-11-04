@@ -57,15 +57,8 @@ jobs:
     - name: Update & Install feeds
       working-directory: ./openwrt
       run: |
-        sed -i '$a\src-git kenzo https:\/\/github.com\/kenzok8\/openwrt-packages' feeds.conf.default
-        sed -i '$a\src-git small https:\/\/github.com\/kenzok8\/small' feeds.conf.default
         sed -i '$a\src-git helloworld https:\/\/github.com\/fw876\/helloworld' feeds.conf.default
         ./scripts/feeds update -a
-        rm -rf package/lean/luci-app-kodexplorer
-        rm -rf package/lean/luci-app-pptp-server
-        rm -rf package/lean/luci-app-v2ray-server
-        rm -rf package/lean/verysync
-        rm -rf package/lean/luci-app-verysync
         ./scripts/feeds install -a
         
     - name: Load custom configuration

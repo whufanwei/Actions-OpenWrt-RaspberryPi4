@@ -58,7 +58,6 @@ jobs:
       working-directory: ./openwrt
       run: |
         sed -i '$a\src-git helloworld https:\/\/github.com\/fw876\/helloworld' feeds.conf.default
-        sed -i '$a\src-git openclash https:\/\/github.com\/vernesong\/OpenClash' feeds.conf.default
         ./scripts/feeds update -a
         ./scripts/feeds install -a
         
